@@ -123,7 +123,7 @@ ggplot(data = subset(caros, caros$sampling_interval == "1 min."),
 
 library(zoo)
 
-caro_1<-caro[1:200,]
+caro_1<-caros[1:200,]
 caro_1 <- mutate(caro_1, rm=speed_ms,
                  window_size="1")
 caro_3 <-mutate(caro_1, rm=rollmean(caro_1$speed_ms, k=3, fill=NA, align="left"),
